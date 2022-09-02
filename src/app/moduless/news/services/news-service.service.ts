@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError, retry } from 'rxjs/operators';
+import { catchError, retry, map } from 'rxjs/operators';
+import { environment } from './../../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class NewsServiceService {
   constructor(private http: HttpClient) { }
   // Top headlines in the IN
   getTopHeadlines(filterKey:any){
+    let newsApikey = environment.newsApikey;
     let categoryKey ='';
     let country= 'country=in';
     let pageSize = `&pageSize=${filterKey.pageSize}`;
@@ -23,7 +25,7 @@ export class NewsServiceService {
     if(filterKey.pageSize){
       pageSize = `&pageSize=${filterKey.pageSize}`
     }
-  let url = `https://newsapi.org/v2/top-headlines?${country}${categoryKey}${pageSize}${page}&apiKey=dcefb5b1d8cf4bb1a216756e4ec99c7f`;
-  return this.http.get(url);
+  let url = `https://newsapi.org/v2/top-headlines?${country}${categoryKey}${pageSize}${page}&apiKey=${newsApikey}`;
+  return this.http.get(url)
   }
 }
