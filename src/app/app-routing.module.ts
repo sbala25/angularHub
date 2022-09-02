@@ -9,17 +9,11 @@ import { WeatherIndexComponent } from './moduless/weather/weather-index/weather-
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'news', component: NewsIndexComponent, children: [
-    { path: '', component: NewsListComponent , data: {categoryKey: ''}},
-    { path: 'business', component: NewsListComponent,  data: { categoryKey: 'business'} },
-    { path: 'entertainment', component: NewsListComponent, data: {categoryKey: 'entertainment'} },
-    { path: 'general', component: NewsListComponent, data: {categoryKey: 'general'} },
-    { path: 'health', component: NewsListComponent, data: {categoryKey: 'health'} },
-    { path: 'science', component: NewsListComponent, data: {categoryKey: 'science'} },
-    { path: 'sports', component: NewsListComponent, data: {categoryKey: 'sports'} },
-    { path: 'technology', component: NewsListComponent, data: {categoryKey: 'technology'} },
-    { path: '**', redirectTo: '/news' }
-  ]},
+  {
+    path: 'news',
+    loadChildren: () =>
+      import('./moduless/news/news.module').then((m) => m.NewsModule),
+  },
   { path: 'weather', component: WeatherIndexComponent },
   { path: '**', component: PageNotFoundComponent },
 ];

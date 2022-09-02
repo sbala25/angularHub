@@ -9,7 +9,7 @@ import { FooterComponent } from './main/footer/footer.component';
 import { FeaturesListComponent } from './main/features-list/features-list.component';
 import { HomeComponent } from './main/home/home.component';
 import { PageNotFoundComponent } from './main/page-not-found/page-not-found.component';
-import { NewsModule } from './moduless/news/news.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { NewsModule } from './moduless/news/news.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NewsModule
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
