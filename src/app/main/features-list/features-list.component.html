@@ -1,0 +1,10 @@
+<section class="container py-4">
+    <h2 class="text-center mb-4">Features</h2>
+    <div class="row">
+        <div class="col-md-4" *ngFor="let feature of fealures" [routerLink]="'/'+feature.routeName">
+            <div class="featureImage" [style.background-image]="feature.backgroundImage ? 'url(' + feature.backgroundImage + ')' : + ')'">
+                <h4>{{feature.name}}</h4>
+            </div>
+        </div>
+    </div>
+</section>

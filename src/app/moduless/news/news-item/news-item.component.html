@@ -1,0 +1,19 @@
+<div class="card">
+  <div class="img-wrap">
+    <img
+      src="{{ newsItem.urlToImage ? newsItem.urlToImage : noImageNews }}"
+      class="card-img-top"
+      alt="{{ newsItem.title }}"
+    />
+  </div>
+  <div class="card-body">
+    <p class="card-text"><small class="text-muted">{{newsItem.date}}</small></p>
+    <h5 class="card-title">{{ newsItem.title }}</h5>
+    <p class="card-text">
+      {{ newsItem.description }}
+    </p>
+    <a href="{{ newsItem.url }}" target="_blank" class="btn btn-primary btn-sm"
+      >Read More...</a
+    >
+  </div>
+</div>

@@ -1,0 +1,18 @@
+.img-wrap{
+    height: 200px;
+    border-top-left-radius: var(--bs-card-inner-border-radius);
+    border-top-right-radius: var(--bs-card-inner-border-radius);
+    overflow: hidden;
+    background-color: #ccc;
+    img{
+        height: 100%;
+        width: auto;
+        max-width: 100%;
+        margin: 0 auto;
+        display: block;
+        border-radius: 0;
+    }
+}
+.card{
+    height: 100%;
+}

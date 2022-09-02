@@ -1,0 +1,18 @@
+<section class="container mb-4 top-margin">
+  <div class="main-panel">
+    <div class="row" *ngIf="news.length">
+      <app-news-item
+        *ngFor="let newsItem of news"
+        [newsItem]="newsItem"
+        class="col-md-4 mb-3 cardWrap"
+      >
+      </app-news-item>
+    </div>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="!news.length && !loader">
+    No news data found
+  </div>
+  <div class="text-center loaderBox">
+    <app-loader  *ngIf="loader"></app-loader>
+  </div>
+</section>
