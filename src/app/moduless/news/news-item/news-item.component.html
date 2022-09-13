@@ -7,7 +7,7 @@
     />
   </div>
   <div class="card-body">
-    <p class="card-text"><small class="text-muted">{{newsItem.date}}</small></p>
+    <p class="card-text"><small class="text-muted">{{newsItem.date | date:'fullDate'}}</small></p>
     <h5 class="card-title">{{ newsItem.title }}</h5>
     <p class="card-text">
       {{ newsItem.description }}
